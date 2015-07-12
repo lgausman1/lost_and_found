@@ -1,0 +1,8 @@
+<h1>Log In</h1>
+<div>
+	<%= form_for @user, url: '/login', method: 'post' do |u| %>
+	<div>Email: <%= u.text_field :email %></div>
+	<div>Password: <%= u.password_field :password %></div>
+	<div><%= u.submit "Log in" %></div>
+	<% end %>
+</div>
