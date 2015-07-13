@@ -17,7 +17,7 @@
   </div>
   <div>
     <%= f.label :status %><br>
-    <%= select_tag(:status, options_for_select(['LOST',1], ['FOUND',2]) %>
+    <%= select_tag :status, options_for_select([['LOST',1],['FOUND',2]]) %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
@@ -31,10 +31,7 @@
     <%= f.label :date %><br>
     <%= f.text_field :date %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
