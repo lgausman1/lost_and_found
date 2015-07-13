@@ -2,25 +2,29 @@
 <h1>Hello World Home Page</h1>
 
 <div class="col-md-12">
-<div id="map"><img src="assets/sf-map.jpg"></div>
+	<div id="map-div" style="width: 1110px; height: 470px; overflow: hidden; border: solid 1px #ccc; margin-bottom: 50px;">
+		<!--<img src="assets/sf-map.jpg">-->
+	</div>
 	<div class="col-md-8">
-		<%= @posts.each do |p| %> 
-		<div class="well">
-		<p><%= p.status %></p>
-		<p>
-		  <strong>Title:</strong>
-		  <%= p.title %>
-		</p>
 
-		<p>
-		  <strong>Description:</strong>
-		  <%=p.description %>
-		</p>
+		<% @posts.each do |post| %> 
+		<div class="well">
+			<p><%= post.status %></p>
+			<p>
+			  <strong>Title:</strong>
+			  <%= post.title %>
+			</p>
+
+			<p>
+			  <strong>Description:</strong>
+			  <%= post.description %>
+			</p>
 		</div>
 		<% end %>
+
 	</div>
 	<div class="col-md-4">
-		<div class="well sign-up" style="background-color:blue; margin-top:25px; padding: 20px;">
+		<div class="well sign-up">
 			<p>Lorem Ipsum</p>
 			<p>Lorem Ipsum</p>
 			<p>Lorem Ipsum</p>
@@ -29,3 +33,57 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	function initialize () {
+		var mapOptions = {
+			//center: { lat: 37.783333, lgn: -122.416667 },
+			center: new google.maps.LatLng(37.783333, -122.416667),
+			zoom: 14,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById('map-div'), mapOptions);
+		google.maps.event.addDomListener(window, 'load', initialize);
+	
+		var marker = new google.maps.Marker({
+	      position: new google.maps.LatLng(37.783333, -122.416667),
+	      map: map,
+	      title: 'Hello World!'
+	 	});
+	}
+
+
+
+
+
+
+    // var map = null;
+    // var geocoder = null;
+
+
+    // function showAddress(address) {
+    //   if (geocoder) {
+    //     geocoder.getLatLng(
+    //       address,
+    //       function(point) {
+    //         if (!point) {
+    //           alert(address + " not found");
+    //         } else {
+    //           map.setCenter(point, 15);
+    //           var marker = new GMarker(point, {draggable: true});
+    //           map.addOverlay(marker);
+    //           GEvent.addListener(marker, "dragend", function() {
+    //             marker.openInfoWindowHtml(marker.getLatLng().toUrlValue(6));
+    //           });
+    //           GEvent.addListener(marker, "click", function() {
+    //             marker.openInfoWindowHtml(marker.getLatLng().toUrlValue(6));
+    //           });
+	   //    GEvent.trigger(marker, "click");
+    //         }
+    //       }
+    //     );
+    //   }
+    // }
+    
+
+
+</script>

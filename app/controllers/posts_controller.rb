@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   before_action :logged_in?
 #  before_action :set_post, only: [:show, :edit, :update, :destroy]
-
   before_action :set_user_post, only: [:edit, :update, :destroy]
 
   # GET /posts
@@ -14,6 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.find(params[:id])
   end
 
   # GET /posts/new
@@ -24,9 +24,6 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
-      # if this is not your post => self.id != post.user_id
-      # throw a flash error
-      # end
   end
 
   # POST /posts
@@ -38,7 +35,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        #format.json { render :show, status: :created, location: @post }
+        format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -53,7 +50,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        #format.json { render :show, status: :ok, location: @post }
+        format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
         format.json { render json: @post.errors, status: :unprocessable_entity }
