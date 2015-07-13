@@ -1,6 +1,7 @@
 class SitesController < ApplicationController
 	def index
 		@users = User.all
+		@posts = Post.all
 		render :index
 	end
 

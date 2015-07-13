@@ -1,3 +1,31 @@
 <%= render partial: "layouts/nav", locals: {user: @user} %>
 <h1>Hello World Home Page</h1>
 
+<div class="col-md-12">
+<div id="map"><img src="assets/sf-map.jpg"></div>
+	<div class="col-md-8">
+		<%= @posts.each do |p| %> 
+		<div class="well">
+		<p><%= p.status %></p>
+		<p>
+		  <strong>Title:</strong>
+		  <%= p.title %>
+		</p>
+
+		<p>
+		  <strong>Description:</strong>
+		  <%=p.description %>
+		</p>
+		</div>
+		<% end %>
+	</div>
+	<div class="col-md-4">
+		<div class="well sign-up" style="background-color:blue; margin-top:25px; padding: 20px;">
+			<p>Lorem Ipsum</p>
+			<p>Lorem Ipsum</p>
+			<p>Lorem Ipsum</p>
+			<p>Lorem Ipsum</p>
+			<p>Lorem Ipsum</p>
+		</div>
+	</div>
+</div>
