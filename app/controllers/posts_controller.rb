@@ -1,13 +1,13 @@
 class PostsController < ApplicationController
-  before_action :logged_in?
+  before_action :logged_in?, only: [:edit, :update, :destroy]
 #  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :set_user_post, only: [:edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = current_user.posts
-    #@posts = Post.all
+    #@posts = current_user.posts
+    @posts = Post.all
   end
 
   # GET /posts/1

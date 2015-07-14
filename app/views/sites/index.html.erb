@@ -34,56 +34,50 @@
 	</div>
 </div>
 <script type="text/javascript">
-	function initialize () {
-		var mapOptions = {
-			//center: { lat: 37.783333, lgn: -122.416667 },
-			center: new google.maps.LatLng(37.783333, -122.416667),
-			zoom: 14,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-		var map = new google.maps.Map(document.getElementById('map-div'), mapOptions);
-		google.maps.event.addDomListener(window, 'load', initialize);
+
+function initialize() {
 	
-		var marker = new google.maps.Marker({
-	      position: new google.maps.LatLng(37.783333, -122.416667),
-	      map: map,
-	      title: 'Hello World!'
-	 	});
-	}
+	var mapOptions = {
+		center: new google.maps.LatLng(37.783333, -122.416667),
+		zoom: 14,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	}; // end mapOptions
 
+	var map = new google.maps.Map(document.getElementById('map-div'), mapOptions);
 
+	google.maps.event.addDomListener(window, 'load', initialize);
 
+	var geocoder = new google.maps.Geocoder();
 
+	var addresses =
+	   	$.get('/posts.json').
+	   	done(function (data) {
+	   		console.log("DATA", data);
+	   		var addressArray = [];
+			// loop through data and get locations
+			for(var i = 0; i < data.length; i++) {
+				addressArray.push(data[i].location);	
+			}
+			console.log(addressArray);
 
+			$.each(addressArray, function(index, address1) {
+				console.log(index + ": " + address1);
+	   			geocoder.geocode({
+	      			'address': address1 + " San Francisco, CA"
+	   			}, 
+	   			function(results, status) {
+	      			if(status == google.maps.GeocoderStatus.OK) {
+	      				console.log(results);
+	         			new google.maps.Marker({
+		            		position: results[0].geometry.location,
+		            		map: map
+	         			});
+	         //map.setCenter(results[0].geometry.location);
+	     	 		} // end if
+	   			}); // end function
+			}); // end each
+	   	}); // end done
 
-    // var map = null;
-    // var geocoder = null;
-
-
-    // function showAddress(address) {
-    //   if (geocoder) {
-    //     geocoder.getLatLng(
-    //       address,
-    //       function(point) {
-    //         if (!point) {
-    //           alert(address + " not found");
-    //         } else {
-    //           map.setCenter(point, 15);
-    //           var marker = new GMarker(point, {draggable: true});
-    //           map.addOverlay(marker);
-    //           GEvent.addListener(marker, "dragend", function() {
-    //             marker.openInfoWindowHtml(marker.getLatLng().toUrlValue(6));
-    //           });
-    //           GEvent.addListener(marker, "click", function() {
-    //             marker.openInfoWindowHtml(marker.getLatLng().toUrlValue(6));
-    //           });
-	   //    GEvent.trigger(marker, "click");
-    //         }
-    //       }
-    //     );
-    //   }
-    // }
-    
-
+}//end initialize
 
 </script>
