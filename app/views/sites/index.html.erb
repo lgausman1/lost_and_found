@@ -1,45 +1,55 @@
-<%= render partial: "layouts/nav", locals: {user: @user} %>
-<h1>Hello World Home Page</h1>
+<script>
+$(document).ready(function() {
+	initialize();
+});
+</script>
 
-<div class="col-md-12">
-	<div id="map-div" style="width: 1110px; height: 470px; overflow: hidden; border: solid 1px #ccc; margin-bottom: 50px;">
-		<!--<img src="assets/sf-map.jpg">-->
-	</div>
-	<div class="col-md-8">
-
-		<% @posts.each do |post| %> 
-		<div class="well">
-			<p><%= post.status %></p>
-			<p>
-			  <strong>Title:</strong>
-			  <%= post.title %>
-			</p>
-
-			<p>
-			  <strong>Description:</strong>
-			  <%= post.description %>
-			</p>
+<h1>San Francisco's Premier Lost and Found Resource</h1>
+<div class="row">
+	<div class="col-md-12">
+		<div class="row">
+			<div id="map-div" style="width: 1110px; height: 470px; overflow: hidden; border: solid 1px #ccc; margin-bottom: 50px;">
+			</div>
 		</div>
-		<% end %>
+		<div class="row">
+			<div class="col-md-8">
 
-	</div>
-	<div class="col-md-4">
-		<div class="well sign-up">
-			<p>Lorem Ipsum</p>
-			<p>Lorem Ipsum</p>
-			<p>Lorem Ipsum</p>
-			<p>Lorem Ipsum</p>
-			<p>Lorem Ipsum</p>
+				<% @posts.each do |post| %> 
+				<div class="well">
+					<p><%= post.status %></p>
+					<p>
+					  <strong>Title:</strong>
+					  <%= post.title %>
+					</p>
+
+					<p>
+					  <strong>Description:</strong>
+					  <%= post.description %>
+					</p>
+				</div>
+				<% end %>
+
+			</div>
+			<div class="col-md-4">
+				<div class="well sign-up">
+					<p>Lorem Ipsum</p>
+					<p>Lorem Ipsum</p>
+					<p>Lorem Ipsum</p>
+					<p>Lorem Ipsum</p>
+					<p>Lorem Ipsum</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
+
 <script type="text/javascript">
 
 function initialize() {
 	
 	var mapOptions = {
 		center: new google.maps.LatLng(37.783333, -122.416667),
-		zoom: 14,
+		zoom: 13,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	}; // end mapOptions
 
@@ -54,11 +64,14 @@ function initialize() {
 	   	done(function (data) {
 	   		console.log("DATA", data);
 	   		var addressArray = [];
+	   		var titleArray = [];
 			// loop through data and get locations
 			for(var i = 0; i < data.length; i++) {
-				addressArray.push(data[i].location);	
+				addressArray.push(data[i].location);
+				titleArray.push(data[i].title);	
 			}
 			console.log(addressArray);
+			console.log(titleArray);
 
 			$.each(addressArray, function(index, address1) {
 				console.log(index + ": " + address1);

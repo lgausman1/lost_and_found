@@ -16,4 +16,14 @@
  */
 body {
 	padding-top: 75px;
+	padding-bottom: 200px;
+}
+
+.navbar ul {
+	font-size: 14px;
+}
+
+#footer .form-control{
+	background-color: transparent;
+	border: 0;
 }

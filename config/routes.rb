@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
 
-  get '/', to: 'sites#index'
+  root to: 'sites#index'
 
   get 'signup', to: 'users#new'
 
@@ -31,5 +31,12 @@ Rails.application.routes.draw do
 #           PATCH  /users/:id(.:format)      users#update
 #           PUT    /users/:id(.:format)      users#update
 #           DELETE /users/:id(.:format)      users#destroy
+#           GET    /                         sites#index
+#    signup GET    /signup(.:format)         users#new
+#     login GET    /login(.:format)          sessions#new
+#           POST   /login(.:format)          sessions#create
+#    logout GET    /logout(.:format)         sessions#destroy
+#     about GET    /about(.:format)          sites#about
+#   contact GET    /contact(.:format)        sites#contact
 
 end

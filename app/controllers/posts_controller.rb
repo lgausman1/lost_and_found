@@ -8,22 +8,26 @@ class PostsController < ApplicationController
   def index
     #@posts = current_user.posts
     @posts = Post.all
+    @user = User.new
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @user = User.new
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    @user = User.new
   end
 
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+
   end
 
   # POST /posts

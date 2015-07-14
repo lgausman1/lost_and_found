@@ -2,14 +2,14 @@ body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 16px;
+
 }
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 16px;
+
 }
 
 pre {
@@ -18,18 +18,7 @@ pre {
   font-size: 11px;
 }
 
-a {
-  color: #000;
 
-  &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}
 
 div {
   &.field, &.actions {
@@ -70,4 +59,15 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+#footer {
+  background-color: #000000;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 0;
+  position: fixed;
+  bottom: 0px;
 }
