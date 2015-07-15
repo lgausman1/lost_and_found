@@ -18,13 +18,7 @@
 				</div>
 				<div class="col-md-4">
 					<p>Returning user?</p>
-					<div class="form-group">
-						<%= form_for @user, url: '/login', method: 'post' do |u| %>
-						<div class="form-control"><%= u.text_field :email, placeholder: "Email" %></div>
-						<div class="form-control"><%= u.password_field :password, placeholder: "Password" %></div>
-						<div class="form-control"><%= u.submit "Log in" %></div>
-						<% end %>
-					</div>
+
 				</div>
 			</div>
 		</div>

@@ -8,7 +8,7 @@ $(document).ready(function() {
 <div class="row">
 	<div class="col-md-12">
 		<div class="row">
-			<div id="map-div" style="width: 1110px; height: 470px; overflow: hidden; border: solid 1px #ccc; margin-bottom: 50px;">
+			<div id="map-div">
 			</div>
 		</div>
 		<div class="row">
@@ -16,27 +16,20 @@ $(document).ready(function() {
 
 				<% @posts.each do |post| %> 
 				<div class="well">
-					<p><%= post.status %></p>
-					<p>
-					  <strong>Title:</strong>
-					  <%= post.title %>
-					</p>
+					<h4><%= post.status %></h4>
+					<p><a href="/posts/<%= post.id %>"><%= post.title %></a></p>
 
-					<p>
-					  <strong>Description:</strong>
-					  <%= post.description %>
-					</p>
+					<p><%= post.description %></p>
 				</div>
 				<% end %>
 
 			</div>
 			<div class="col-md-4">
 				<div class="well sign-up">
-					<p>Lorem Ipsum</p>
-					<p>Lorem Ipsum</p>
-					<p>Lorem Ipsum</p>
-					<p>Lorem Ipsum</p>
-					<p>Lorem Ipsum</p>
+					<p>Sharing is easy as 1-2-3</p>
+					<p><span>1</span>Lorem Ipsum</p>
+					<p><span>2</span>Lorem Ipsum</p>
+					<p><span>2</span>Lorem Ipsum</p>
 				</div>
 			</div>
 		</div>

@@ -27,3 +27,11 @@ body {
 	background-color: transparent;
 	border: 0;
 }
+
+#map-div {
+	 width: 1110px; 
+	 height: 470px; 
+	 overflow: hidden; 
+	 border: solid 1px #ccc; 
+	 margin-bottom: 50px;
+}
