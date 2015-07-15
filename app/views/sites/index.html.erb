@@ -26,10 +26,10 @@ $(document).ready(function() {
 			</div>
 			<div class="col-md-4">
 				<div class="well sign-up">
-					<p>Sharing is easy as 1-2-3</p>
-					<p><span>1</span>Lorem Ipsum</p>
-					<p><span>2</span>Lorem Ipsum</p>
-					<p><span>2</span>Lorem Ipsum</p>
+					<p><strong>Connecting is easy as 1-2-3</strong></p>
+					<div class="row"><span class="num">1</span><p>Sign up today to create an account</p></div>
+					<div class="row"><span class="num">2</span><p>Create a post. Your personal information will be kept private.</p></div>
+					<div class="row"><span class="num">3</span><p>Help someone find a lost item or pet, OR get some help finding yours.</p></div>
 				</div>
 			</div>
 		</div>
@@ -55,33 +55,23 @@ function initialize() {
 	var addresses =
 	   	$.get('/posts.json').
 	   	done(function (data) {
-	   		console.log("DATA", data);
 	   		var addressArray = [];
 	   		var titleArray = [];
 			// loop through data and get locations
 			for(var i = 0; i < data.length; i++) {
 				addressArray.push(data[i].location);
 				titleArray.push(data[i].title);	
+				$.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+data[i].location+ ' San Francisco, CA' +'&sensor=false', null, function (data) {
+					var p = data.results[0].geometry.location;
+					var latlng = new google.maps.LatLng(p.lat,p.lng);
+					new google.maps.Marker({
+						position: latlng,
+						map: map
+					});
+				})
 			}
-			console.log(addressArray);
-			console.log(titleArray);
 
-			$.each(addressArray, function(index, address1) {
-				console.log(index + ": " + address1);
-	   			geocoder.geocode({
-	      			'address': address1 + " San Francisco, CA"
-	   			}, 
-	   			function(results, status) {
-	      			if(status == google.maps.GeocoderStatus.OK) {
-	      				console.log(results);
-	         			new google.maps.Marker({
-		            		position: results[0].geometry.location,
-		            		map: map
-	         			});
-	         //map.setCenter(results[0].geometry.location);
-	     	 		} // end if
-	   			}); // end function
-			}); // end each
+
 	   	}); // end done
 
 }//end initialize

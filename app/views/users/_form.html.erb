@@ -10,29 +10,35 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="row">
+  <div class="form-group">
+    <%= f.label :name %> <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
+</div>
+<div class="row">
+  <div class="form-group">
+    <%= f.label :username %> <%= f.text_field :username %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+</div>
+<div class="row">
+  <div class="form-group">
+      <%= f.label :email %> <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
+</div>
+<div class="row">
+  <div class="form-group">
+    <%= f.label :password %> <%= f.password_field :password %>
   </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
+</div>
+<div class="row">
+  <div class="form-group">
+    <%= f.label :password_confirmation %> <%= f.password_field :password_confirmation %>
   </div>
-
-  <div class="actions">
+</div>
+<div class="row">
+  <div class="form-group">
     <button class="btn btn-default">Submit</button>
   </div>
+</div>
+
 <% end %>

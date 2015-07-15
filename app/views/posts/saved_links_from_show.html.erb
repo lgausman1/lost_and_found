@@ -3,10 +3,26 @@
 
 // saved from footer
 
-					<div class="form-group">
-						<%= form_for @user, url: '/login', method: 'post' do |u| %>
-						<div class="form-control"><%= u.text_field :email, placeholder: "Email" %></div>
-						<div class="form-control"><%= u.password_field :password, placeholder: "Password" %></div>
-						<div class="form-control"><%= u.submit "Log in" %></div>
-						<% end %>
-					</div>
+// saved from google maps
+
+console.log(addressArray);
+			console.log(titleArray);
+
+			$.each(addressArray, function(index, address1) {
+				console.log(index + ": " + address1);
+	   			geocoder.geocode({
+	      			'address': address1 + " San Francisco, CA"
+	   			}, 
+	   			function(results, status) {
+	      			if(status == google.maps.GeocoderStatus.OK) {
+	      				console.log("if statement results: " + results);
+	         			new google.maps.Marker({
+		            		position: results[0].geometry.location,
+		            		map: map,
+		            		title: 'Hello world'
+	         			});
+	         //map.setCenter(results[0].geometry.location);
+	     	 		} // end if
+	   			}); // end function
+			
+			}); // end each
