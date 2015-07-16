@@ -13,15 +13,13 @@ function initialize() {
   		//console.log(data);
 
   		$.each(data,function (ind, obj) {
-  			//obj.location, obj.status, obj.title, obj.id
+  			// grab obj.location, obj.status, obj.title, obj.id
   			  
   			function create_marker (MapPos) {
   				var marker = new google.maps.Marker({
   					position: MapPos,
         			map: map
   				});
-
-
 
 	  			// pass in the status, title, and link  !!!!! marker not defined !!!!
 	  			google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
@@ -32,18 +30,14 @@ function initialize() {
 	  			})
 	  			(marker, content, infowindow)); // end listener 
 
-
-
   			} // end create_marker
 
   			var infowindow = new google.maps.InfoWindow();
 
-  			var content = "<div>" + obj.status + 
-  								"<br>" + obj.title + 
-  								"<br>" + obj.id +
-  								"</div>";
-
-  			console.log(content);
+  			var content = "<div class='infoDiv'><h1>" + obj.status + "</h1>" 
+  								+ "<p>" + obj.title + "</p>" 
+  								+ "<button class='btn btn-danger'><a href='posts/" + obj.id + "'>More info</a></button>"
+  								+ "</div>";
 
   			// geocode the address and set the marker 			
   			geocoder.geocode({
@@ -57,11 +51,9 @@ function initialize() {
 
   			); // end geocode
 
-
   		}); // end each
   		
    	}); // end done
-
 
 }//end initialize
 
