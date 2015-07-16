@@ -1,3 +1,4 @@
+
 <script>
 $(document).ready(function() {
 	initialize();
@@ -36,44 +37,3 @@ $(document).ready(function() {
 	</div>
 </div>
 
-<script type="text/javascript">
-
-function initialize() {
-	
-	var mapOptions = {
-		center: new google.maps.LatLng(37.783333, -122.416667),
-		zoom: 13,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	}; // end mapOptions
-
-	var map = new google.maps.Map(document.getElementById('map-div'), mapOptions);
-
-	google.maps.event.addDomListener(window, 'load', initialize);
-
-	var geocoder = new google.maps.Geocoder();
-
-	var addresses =
-	   	$.get('/posts.json').
-	   	done(function (data) {
-	   		var addressArray = [];
-	   		var titleArray = [];
-			// loop through data and get locations
-			for(var i = 0; i < data.length; i++) {
-				addressArray.push(data[i].location);
-				titleArray.push(data[i].title);	
-				$.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+data[i].location+ ' San Francisco, CA' +'&sensor=false', null, function (data) {
-					var p = data.results[0].geometry.location;
-					var latlng = new google.maps.LatLng(p.lat,p.lng);
-					new google.maps.Marker({
-						position: latlng,
-						map: map
-					});
-				})
-			}
-
-
-	   	}); // end done
-
-}//end initialize
-
-</script>

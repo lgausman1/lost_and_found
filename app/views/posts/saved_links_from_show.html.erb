@@ -5,24 +5,48 @@
 
 // saved from google maps
 
-console.log(addressArray);
-			console.log(titleArray);
+<script type="text/javascript">
 
-			$.each(addressArray, function(index, address1) {
-				console.log(index + ": " + address1);
-	   			geocoder.geocode({
-	      			'address': address1 + " San Francisco, CA"
-	   			}, 
-	   			function(results, status) {
-	      			if(status == google.maps.GeocoderStatus.OK) {
-	      				console.log("if statement results: " + results);
-	         			new google.maps.Marker({
-		            		position: results[0].geometry.location,
-		            		map: map,
-		            		title: 'Hello world'
-	         			});
-	         //map.setCenter(results[0].geometry.location);
-	     	 		} // end if
-	   			}); // end function
-			
-			}); // end each
+function initialize() {
+	
+	var mapOptions = {
+		center: new google.maps.LatLng(37.783333, -122.416667),
+		zoom: 13,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	}; // end mapOptions
+
+	var map = new google.maps.Map(document.getElementById('map-div'), mapOptions);
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+
+   	$.get('/posts.json').
+   	  done(function (data) {
+   		var titleArray = [];
+
+		// loop through data and get locations
+		 for(var i = 0; i < data.length; i++) {
+			// get the lat lng and set a marker
+			$.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+
+				data[i].location + ' San Francisco, CA' + 
+				'&sensor=false', null, function (geodata) {
+				var p = geodata.results[0].geometry.location;
+				var latlng = new google.maps.LatLng(p.lat,p.lng);
+
+				var marker = new google.maps.Marker({
+					position: latlng,
+					map: map
+
+					}); // end marker
+				var infowindow = new google.maps.InfoWindow({
+					content: data[i].title
+				});
+				
+			}); // end getJSON
+
+		} // end for loop
+
+   	}); // end done
+
+}//end initialize
+
+</script>

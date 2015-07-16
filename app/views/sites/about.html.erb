@@ -1,19 +1,16 @@
-<%= render partial: "layouts/nav", locals: {user: @user} %>
-<h1>Hello World About Page</h1>
-	<div class="col-md-8">
-		<%= @posts.each do |p| %> 
-		<div class="well">
-		<p><%= p.status %></p>
-		<p>
-		  <strong>Title:</strong>
-		  <%= p.title %>
-		</p>
-
-		<p>
-		  <strong>Description:</strong>
-		  <%=p.description %>
-		</p>
-		</div>
-		<% end %>
+<div class="row">
+	<h1>About Find.it</h1>
+</div>
+<div class="row">
+	<div class="col-md-7 col-md-offset-1">
+		<p>Welcome to Find.it, the largest and most comprehensive website devoted exclusively to the recovery of pets and personal property. Our sole purpose is to reunite lost and found pets and property to their respective owners using the dynamic communication channels provided by the Internet. What could be more satisfying than returning the family dog or engagement ring to their respective owners?</p>
 	</div>
+	<div class="col-md-3 col-md-offset-1 well">
+		<p><strong>Easy to Use Tool...</strong></p>
+		<p>Luckily Kitty came back by himself, but the ease at which I entered details and then was able to remove them was effortless. Hopefully will not have to use you again.Thanks!</p>
+	</div>
+</div>
+
+
+
 
