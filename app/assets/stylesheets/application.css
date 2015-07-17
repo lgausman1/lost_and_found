@@ -22,17 +22,91 @@ body {
 .navbar ul {
 	font-size: 14px;
 }
+.purple {
+	background-color: #440e62;
+	height: 80px;
+}
+#map-div {
+	 width: 1140px; 
+	 height: 470px; 
+	 overflow: hidden; 
+	 border: solid 1px #ccc; 
+	 margin: 25px 0 50px 15px;
+}
+
+#footer {
+  background-color: #440e62;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 0;
+  position: fixed;
+  bottom: 0px;
+}
+
+#footer ul li {
+  list-style: none;
+}
+
+#footer a {
+  color: #ffffff;
+}
 
 #footer .form-control{
 	background-color: transparent;
 	border: 0;
 }
 
-#map-div {
-	 width: 1140px; 
-	 height: 470px; 
-	 overflow: hidden; 
-	 border: solid 1px #ccc; 
-	 margin-bottom: 50px;
-	 margin-left: 15px;
+.sign-up {
+  background-color: #ca5720;
+  color: #ffffff;
+}
+
+.num {
+  font-size: 40px;
+  float: left;
+  margin: -10px 20px 20px 20px;
+  font-weight: bold;
+}
+
+.infoDiv {
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.infoDiv h1 {
+  font-size: 14px;
+}
+
+.infoDiv p {
+  font-size: 12px;
+}
+
+.infoDiv a {
+  color: #ffffff;
+}
+
+#header-icons {
+	float: left;
+	margin-top: 10px;
+	list-style: none;
+}
+
+#header-icons li {
+	display: inline;
+	margin-right: 25px;
+}
+
+.top15 {
+	margin-top: 15px;
+}
+
+.social-icons li {
+	margin-bottom: 10px;
+}
+
+.social-icons span {
+	margin-right: 10px;
 }
