@@ -1,27 +1,26 @@
 <p id="notice"><%= notice %></p>
+<div class="row top25">
+  <div class="col-md-8 col-md-offset-2">
+    <h3><%= @post.status %></h3>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-<p>
-  <strong>Status:</strong>
-  <%= @post.status %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
+    <p><strong><%= @post.title %></strong></p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @post.location %>
-</p>
+    <p><strong>Description:</strong>
+      <%= @post.description %>
+    </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @post.date %>
-</p>
+    <p><strong>Location:</strong>
+      <%= @post.location %>
+    </p>
+
+    <p><strong>Date:</strong>
+      <%= @post.date %>
+    </p>
 
 
-<button class="btn btn-defaul"><a href="mailto:<%= @user.email %>">Contact Me</a></button>
+    <button class="btn btn-default"><a href="mailto:<%= @user.email %>">Contact Me</a></button>
+  
+  </div>
+
+</div>
+

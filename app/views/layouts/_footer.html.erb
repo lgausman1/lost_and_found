@@ -18,13 +18,13 @@
 						<li><span><img src="/assets/instagram40.png"></span><a href="http://www.instagram.com" target="_blank">Capture and Share</a></li>
 					</ul>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<p>Returning user?</p>
 					<div class="form-group">
 						<%= form_for @user, url: '/login', method: 'post' do |u| %>
-						<div class="form-control"><%= u.text_field :email, placeholder: "Email" %></div>
-						<div class="form-control"><%= u.password_field :password, placeholder: "Password" %></div>
-						<div class="form-control"><%= u.submit "Log in", class: "btn btn-primary" %></div>
+						<div class="form-control"><%= u.text_field :email, placeholder: "Email", class: "form-control white" %></div>
+						<div class="form-control"><%= u.password_field :password, placeholder: "Password", class: "form-control white top15" %></div>
+						<div class="form-control"><%= u.submit "Log in", class: "btn btn-primary top25" %></div>
 						<% end %>
 					</div>
 				</div>

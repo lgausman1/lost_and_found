@@ -16,7 +16,7 @@
  */
 body {
 	padding-top: 75px;
-	padding-bottom: 200px;
+	padding-bottom: 260px;
 }
 
 .navbar ul {
@@ -44,6 +44,7 @@ body {
   margin-bottom: 0;
   position: fixed;
   bottom: 0px;
+  height: 225px;
 }
 
 #footer ul li {
@@ -103,6 +104,10 @@ body {
 	margin-top: 15px;
 }
 
+.top25 {
+  margin-top: 25px;
+}
+
 .social-icons li {
 	margin-bottom: 10px;
 }
@@ -110,3 +115,14 @@ body {
 .social-icons span {
 	margin-right: 10px;
 }
+.white {
+  background-color: #ffffff!important;
+}
+
+.intro {
+  font-size: 20px;
+  margin: 25px 0;
+  color: #666;
+  line-height: 32px;
+}
+
