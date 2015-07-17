@@ -46,7 +46,7 @@ post3 = Post.create({
 	description: "He's white and fluffy, about 3 months old.",
 	location: "1100 Broderick",
 	date: "Sat. 7/11", 
-	user_id :3 })
+	user_id:3 })
 
 post4 = Post.create({
 	title: "Wandering Duck",
