@@ -1,6 +1,8 @@
 # Lost and Found App
 ## Find.it: San Francisco's Premier Lost and Found Resource
 
+View the project: https://safe-shelf-2769.herokuapp.com/
+
 Find.it is a simple app that allows users to create a profile and post an 'ad' for a lost or found item. Each post maps the location of the lost / found item on a Google maps interface.
 
 ## Technologies Used
