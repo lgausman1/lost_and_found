@@ -5,7 +5,7 @@ Find.it is a simple app that allows users to create a profile, post an 'ad' for 
 
 ## Technologies Used
 
-Ruby, Rails, Postgres, JQuery, JavaScript, Bootstrap
+Ruby, Rails, Postgres, JQuery, JavaScript, Bootstrap, AJAX
 
 ## User Stories
 
