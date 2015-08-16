@@ -1,8 +1,17 @@
 <h1>Log In</h1>
-<div>
-	<%= form_for @user, url: '/login', method: 'post' do |u| %>
-	<div>Email: <%= u.text_field :email %></div>
-	<div>Password: <%= u.password_field :password %></div>
-	<div><%= u.submit "Log in" %></div>
-	<% end %>
+<div class="row top25">
+	<div class="col-md-6 col-md-offset-1">
+		
+		<div class="form-group">
+			<%= form_for @user, url: '/login', method: 'post' do |u| %>
+			<div><%= u.text_field :email, placeholder: "Email", class: "form-control" %></div>
+			<div><%= u.password_field :password, placeholder: "Password", class: "form-control top25" %></div>
+			<div><%= u.submit "Log in", class: "btn btn-primary top25" %></div>
+			<% end %>
+		</div>
+
+	</div>
 </div>
+
+
+
