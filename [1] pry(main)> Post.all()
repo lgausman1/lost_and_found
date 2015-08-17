@@ -1,0 +1,143 @@
+[1] pry(main)> Post.all()
+  Post Load (0.8ms)  SELECT "posts".* FROM "posts"
+=> [#<Post:0x007fdc8f3f87e8
+  id: 15,
+  title: "Laptop",
+  description: "brand new apple macbook air",
+  location: "275 Battery St",
+  date: "tues, July 14",
+  user_id: 3,
+  created_at: Wed, 15 Jul 2015 01:27:23 UTC +00:00,
+  updated_at: Wed, 15 Jul 2015 01:33:51 UTC +00:00,
+  status: "LOST">,
+ #<Post:0x007fdc8f3f8478
+  id: 10,
+  title: "Baby Hippo",
+  description: "I found your baby Hippo. PLEASE COME GET HER!",
+  location: "3337 Fulton St",
+  date: "Sunday, 7/12",
+  user_id: 3,
+  created_at: Sun, 12 Jul 2015 22:38:54 UTC +00:00,
+  updated_at: Wed, 15 Jul 2015 01:42:57 UTC +00:00,
+  status: "FOUND">,
+ #<Post:0x007fdc8f3f8130
+  id: 12,
+  title: "Fluffy Puppy",
+  description: "He's white and fluffy, about 3 months old.",
+  location: "1100 Broderick",
+  date: "Sat. 7/11",
+  user_id: 3,
+  created_at: Mon, 13 Jul 2015 00:26:20 UTC +00:00,
+  updated_at: Wed, 15 Jul 2015 01:43:14 UTC +00:00,
+  status: "LOST">,
+ #<Post:0x007fdc8f3ebca0
+  id: 13,
+  title: "Wandering Duck",
+  description: "White duck with orange bill and feet. Quite noisy, too. ",
+  location: "600 Bay St.",
+  date: "Mon, July 13",
+  user_id: 3,
+  created_at: Mon, 13 Jul 2015 18:08:09 UTC +00:00,
+  updated_at: Wed, 15 Jul 2015 01:43:31 UTC +00:00,
+  status: "FOUND">,
+ #<Post:0x007fdc8f3eb9f8
+  id: 4,
+  title: "Tabby Cat - Male",
+  description: "approx. 3 yrs old, tan and grey tabby",
+  location: "1300 Fulton St",
+  date: "Sat. 7/11",
+  user_id: 2,
+  created_at: Sun, 12 Jul 2015 17:06:31 UTC +00:00,
+  updated_at: Wed, 15 Jul 2015 01:44:48 UTC +00:00,
+  status: "LOST">,
+ #<Post:0x007fdc8f3eb700
+  id: 9,
+  title: "Baby Hippo! LOST!",
+  description: "We were swimming at the beach and now she's LOST!",
+  location: "Ocean Beach",
+  date: "Sat. 7/11",
+  user_id: 2,
+  created_at: Sun, 12 Jul 2015 22:35:11 UTC +00:00,
+  updated_at: Wed, 15 Jul 2015 01:44:58 UTC +00:00,
+  status: "LOST">,
+ #<Post:0x007fdc8f3eb390
+  id: 11,
+  title: "Wedding ring",
+  description:
+   "In my cereal box. Locally produced granola. contact me with reward, sucka!",
+  location: "500 Beach St",
+  date: "Sunday, 7/12",
+  user_id: 2,
+  created_at: Mon, 13 Jul 2015 00:23:08 UTC +00:00,
+  updated_at: Wed, 15 Jul 2015 01:45:11 UTC +00:00,
+  status: "FOUND">,
+ #<Post:0x007fdc8f3eb200
+  id: 3,
+  title: "Lost Watch",
+  description: "It's a cheap watch made in China but I still want it back.",
+  location: "1300 Fulton",
+  date: "July 11",
+  user_id: 2,
+  created_at: Sat, 11 Jul 2015 19:01:22 UTC +00:00,
+  updated_at: Wed, 15 Jul 2015 01:45:31 UTC +00:00,
+  status: "LOST">,
+ 
+ #<Post:0x007fdc8f3eaf30
+  id: 14,
+  title: "Ladies Diamond watch",
+  description:
+   "Not sure if these are real, but I don't care. I'll be happy to return your watch.",
+  location: "631 Hayes St",
+  date: "Mon, July 13",
+  user_id: 2,
+  created_at: Tue, 14 Jul 2015 20:39:38 UTC +00:00,
+  updated_at: Wed, 15 Jul 2015 01:45:53 UTC +00:00,
+  status: "FOUND">,
+ 
+ #<Post:0x007fdc8f3eab20
+  id: 18,
+  title: "Lost Parrot",
+  description:
+   "He's a golden naped amazon, very friendly. His name is Hugo. Please contact me if you see him!",
+  location: "33 New Montgomery",
+  date: "Sun. Aug 18",
+  user_id: nil,
+  created_at: Sun, 16 Aug 2015 23:07:38 UTC +00:00,
+  updated_at: Sun, 16 Aug 2015 23:07:38 UTC +00:00,
+  status: "LOST">,
+ 
+ #<Post:0x007fdc8f3ea878
+  id: 19,
+  title: "Missing Kitty",
+  description:
+   "My Kitty, Fluffy, ran away! I have called and called her and she won't come home! Please contact me if you've seen a black and white fluffy kitty. She's a female, 6 months old.",
+  location: "900 Market St",
+  date: "Sat. Aug 15",
+  user_id: 6,
+  created_at: Sun, 16 Aug 2015 23:27:55 UTC +00:00,
+  updated_at: Sun, 16 Aug 2015 23:37:34 UTC +00:00,
+  status: "LOST">,
+ 
+ #<Post:0x007fdc8f3ea508
+  id: 20,
+  title: "Million Dollar Bill",
+  description:
+   "HELP! I lost my MILLION DOLLAR BILL! Now I don't have any MONEY! Please contact me right away if you find it!",
+  location: "1300 California St",
+  date: "Sat. Aug 15",
+  user_id: nil,
+  created_at: Mon, 17 Aug 2015 01:21:35 UTC +00:00,
+  updated_at: Mon, 17 Aug 2015 01:21:35 UTC +00:00,
+  status: "FOUND">,
+ 
+ #<Post:0x007fdc8f3ea2b0
+  id: 21,
+  title: "Million Dollar Bill",
+  description: "I lost my million dollar bill! Reward!",
+  location: "500 Hayes st",
+  date: "Sun. Aug 16",
+  user_id: 6,
+  created_at: Mon, 17 Aug 2015 03:03:53 UTC +00:00,
+  updated_at: Mon, 17 Aug 2015 03:03:53 UTC +00:00,
+  status: "LOST">]
+
