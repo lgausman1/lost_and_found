@@ -14,11 +14,23 @@
  *= require_tree .
  *= require_self
  */
+
+ html {
+  height: 100%; /* setting to float footer to bottom */
+ }
+
 body {
 	padding-top: 75px;
 	padding-bottom: 260px;
+  min-height: 100%; /* setting to float footer to bottom */
+  position: relative;
 }
 
+#wrapper {
+  min-height: 100%; /* setting to float footer to bottom */
+}
+
+/* navbar and header styles */
 .navbar ul {
 	font-size: 14px;
 }
@@ -26,6 +38,19 @@ body {
 	background-color: #440e62;
 	height: 80px;
 }
+
+#header-icons {
+  float: left;
+  margin-top: 10px;
+  list-style: none;
+}
+
+#header-icons li {
+  display: inline;
+  margin-right: 25px;
+}
+
+/* map */
 #map-div {
 	 width: 1140px; 
 	 height: 470px; 
@@ -34,15 +59,13 @@ body {
 	 margin: 25px 0 50px 15px;
 }
 
+/* footer styles */
 #footer {
   background-color: #440e62;
   color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 0;
   width: 100%;
-  margin-top: 50px;
-  margin-bottom: 0;
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   height: 225px;
 }
@@ -60,6 +83,20 @@ body {
 	border: 0;
 }
 
+.social-icons li {
+  margin-bottom: 10px;
+}
+
+.social-icons span {
+  margin-right: 10px;
+}
+
+/* form in footer */
+.white {
+  background-color: #ffffff!important;
+}
+
+/* home page side bar */
 .sign-up {
   background-color: #ca5720;
   color: #ffffff;
@@ -89,17 +126,7 @@ body {
   color: #ffffff;
 }
 
-#header-icons {
-	float: left;
-	margin-top: 10px;
-	list-style: none;
-}
-
-#header-icons li {
-	display: inline;
-	margin-right: 25px;
-}
-
+/* add some vertical space */
 .top15 {
 	margin-top: 15px;
 }
@@ -108,17 +135,7 @@ body {
   margin-top: 25px;
 }
 
-.social-icons li {
-	margin-bottom: 10px;
-}
-
-.social-icons span {
-	margin-right: 10px;
-}
-.white {
-  background-color: #ffffff!important;
-}
-
+/* paragraph style for about page */
 .intro {
   font-size: 20px;
   margin: 25px 0;

@@ -8,10 +8,12 @@
   <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
 </head>
 <body>
+<div id="wrapper">
 <%= render partial: "layouts/nav", locals: {user: @user} %>
 	<div class="container">
 		<%= yield %>
 	</div>
 <%= render partial: "layouts/footer", locals: {user: @user} %>	
+</div>
 </body>
 </html>
